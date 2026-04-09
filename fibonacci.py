@@ -8,7 +8,15 @@ EX. fib(0) =0; fib(1) = 1; fib(2) = 1; fib(3) = 2; fib(5) = 5; fib(6) = 8.
 """
 def fibonacci_recursivo():
     num = valid_input(input('Digite um numero: '))
-    print(num)
+    count = 0
+    while True:
+        print(f'Fib({count}): {num}')
+        count += 1
+        if count == 2:
+            num += 1
+        if count == 6:
+            break
+    
 
 def valid_input(n):
     try:
