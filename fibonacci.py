@@ -9,14 +9,21 @@ EX. fib(0) =0; fib(1) = 1; fib(2) = 1; fib(3) = 2; fib(5) = 5; fib(6) = 8.
 def fibonacci_recursivo():
     num = valid_input(input('Digite um numero: '))
     count = 0
-    while True:
-        print(f'Fib({count}): {num}')
-        count += 1
-        if count == 2:
-            num += 1
-        if count == 6:
-            break
-    
+    num1 = 0
+    num2 = 0
+    while count < num:
+        count += 1 
+        num1 = count
+        num2 = count - 1
+        
+        fibo = (num1 + num2)
+        print(f'atual fibo: {num1} + {num2} = {fibo}')
+        num2 += num1 - 1
+        print('contagem', count)
+        
+
+    return fibo
+        
 
 def valid_input(n):
     try:
@@ -28,5 +35,4 @@ def valid_input(n):
         return 'escreva um numero inteiro'
     
     
-fibonacci_recursivo()
-print('vining')
+print(fibonacci_recursivo())
