@@ -8,13 +8,17 @@ EX. fib(0) =0; fib(1) = 1; fib(2) = 1; fib(3) = 2; fib(5) = 5; fib(6) = 8.
 """
 def fibonacci_recursivo():
     num = valid_input(input('Digite um numero: '))
+    if num == 0:
+        fib = 0
+        return fib
+    
     num1, num2 = 0, 1
     fib = num1 + num2
+    
     for _ in range(num - 1):
         fib = num1 + num2
         num1 = num2
-        num2 = fib
-        
+        num2 = fib   
     return fib
         
 
