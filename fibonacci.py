@@ -12,8 +12,7 @@ def fibonacci_recursivo():
     while True:
         print(f'Fib({count}): {num}')
         count += 1
-        if count == 2:
-            num += 1
+        num = (num + 1) + (num + 2)
         if count == 6:
             break
     
