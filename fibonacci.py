@@ -46,3 +46,16 @@ def valid_input(n):
 
 print(linear())
 print(recursivo())
+
+def fibonacci(num):
+    if num <= 1:
+        return num
+    a, b = 0, 1
+    
+    for _ in range(num - 1):
+        fibo = a + b
+        a = b
+        b = fibo
+    return fibo
+
+print(fibonacci(6))
