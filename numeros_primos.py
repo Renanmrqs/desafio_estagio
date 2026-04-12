@@ -17,16 +17,33 @@ def primo_linear():
     
     for num in range(2, usuario_input + 1):
         fleguer = True
-        for divisor in range(2, (usuario_input)):
-            print(f'{num} / {divisor}')
+        for divisor in range(2, (num)):
             if num % divisor == 0:
-                fleguer == False
-            if fleguer == False:
+                fleguer = False
                 break
         if fleguer == True:
             lista.append(num)    
         
     return lista
+
+def monta_primo(atual, limite, lista):
+    
+    if atual > limite:
+        return lista
+    
+    if test_primo(atual, 2) == True:
+        lista.append(atual)
+        
+    return monta_primo(atual + 1, limite, lista)
+
+def test_primo(num, divisor):
+    if divisor == num:
+        return True
+    
+    if num % divisor == 0:
+        return False
+    
+    return test_primo(num, divisor + 1)
 
 def valid_input(n):
     try:
@@ -37,4 +54,8 @@ def valid_input(n):
     except ValueError:
         return 'escreva um numero inteiro'
     
-print(primo_linear())
+
+
+usuario_input = valid_input(input('Digite um numero: '))
+resultado = monta_primo(2, usuario_input, [])
+print(resultado)
