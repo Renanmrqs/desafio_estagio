@@ -10,15 +10,22 @@ EX. p(2) = [2]; p(3) = [2, 3]; p(10) = [2, 3, 5, 7];
 """
 
 def primo_linear():
-    num = valid_input(input('Digite um numero: '))
-    if num < 2:
+    usuario_input = valid_input(input('Digite um numero: '))
+    if usuario_input < 2:
         return 
     lista = []
-    n = 1
-    while n < num:
-        if (num ** 0.5) % n  == 0:
-            lista.append(n)
-        n += 1
+    
+    for num in range(2, usuario_input + 1):
+        fleguer = True
+        for divisor in range(2, (usuario_input)):
+            print(f'{num} / {divisor}')
+            if num % divisor == 0:
+                fleguer == False
+            if fleguer == False:
+                break
+        if fleguer == True:
+            lista.append(num)    
+        
     return lista
 
 def valid_input(n):
